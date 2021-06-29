@@ -1,4 +1,4 @@
-body {
+/*body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,64 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+*/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
+header{
+  height:60px;
+  background-color: lightcoral;
+  display: flex;
+  padding:0 20px;
+}
+
+.menu-toggle{
+  display: none;
+  margin-left: auto;
+  color: #fff;
+  line-height: 60px;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.logo a{
+  color:#fff;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+.menu{
+  margin-left: auto; /*se ponen a la derecha los links*/
+}
+
+.menu ul li{
+  display: inline-block; /*alinea de forma horizontal*/
+}
+
+.menu ul li a{
+  display: inline-block;
+  position: relative;
+  color:#fff;
+  text-decoration: none;
+  line-height: 60px; /*para que se ponga en el medio de la barra*/
+  padding:0 8px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.menu ul li a:hover{
+  color:lightcoral;
+  background-color: #fff;
 }

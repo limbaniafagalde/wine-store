@@ -32,15 +32,6 @@ header{
   padding:0 20px;
 }
 
-.menu-toggle{
-  display: none;
-  margin-left: auto;
-  color: #fff;
-  line-height: 60px;
-  font-size:25px;
-  cursor:pointer;
-}
-
 .logo a{
   color:#fff;
   text-decoration: none;
@@ -70,4 +61,11 @@ header{
 .menu ul li a:hover{
   color:lightcoral;
   background-color: #fff;
+}
+
+.cart-widget{
+/*  margin-left: auto; */
+  line-height: 60px;
+  cursor:pointer;
+  padding: 8px 25px;
 }

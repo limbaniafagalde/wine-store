@@ -1,6 +1,5 @@
 import React from "react"; //siempre en la line 1 de cada componente
-import vino from './vino.png';
-
+import Cart from "./Cart/Cart";
 
 const Navbar  = () => {
     return ( //un jsx siempre tiene return
@@ -15,8 +14,8 @@ const Navbar  = () => {
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
-            <div className="menu-toggle">
-                #
+            <div className="cart-widget">
+                <Cart/>
             </div>
         </header>
 

@@ -69,3 +69,20 @@ header{
   cursor:pointer;
   padding: 8px 25px;
 }
+
+div.counter {
+  background-color: rgb(236, 236, 236);
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin:0 10px;
+}
+
+.quantity {
+  display:flex;
+  justify-content:center; /*centrar el div con flexbox*/
+  margin-top:10px;
+}

@@ -86,3 +86,22 @@ div.counter {
   justify-content:center; /*centrar el div con flexbox*/
   margin-top:10px;
 }
+
+.productView{
+  width: 270px;
+  height:270px;
+  display:inline-block;
+  float: left;
+  border: 1px solid rgb(240, 141, 141);
+  border-radius: 1%;
+  margin:15px;
+  padding:10px;
+}
+
+.productImage{
+  width: 155px;
+  height: 200px;
+  border-bottom:1px solid rgb(240, 141, 141);
+  padding-bottom: 5px;
+}
+

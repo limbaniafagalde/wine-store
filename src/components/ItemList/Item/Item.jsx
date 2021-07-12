@@ -1,12 +1,11 @@
 import React from "react";
 
 
-const Item = ({itemL}, props) => {
+const Item = ({itemL}) => {
 
 
     return (
         <>
-            {props.getItem}
             <div className = "productView">
                 <img className = "productImage" src={itemL.img} alt={itemL.title} />
                 <div className="productInfo">

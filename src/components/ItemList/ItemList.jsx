@@ -2,13 +2,13 @@ import React from "react";
 import Item from "./Item/Item"
 
 
-const ItemList = ({itemL}, props) => {
+const ItemList = ({itemL}) => {
 
     return (
         <>
 
         <div>
-                <Item itemL = {itemL} getItems = {props.getItems}/> 
+                <Item itemL = {itemL}/> 
             
         </div>
             

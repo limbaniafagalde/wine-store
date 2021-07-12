@@ -44,15 +44,14 @@ const ItemListContainer = () => {
         });
       };
 
+      getItems()
+      .then((resolve) => setItemState(resolve)) //recibo la data en resolve y lo almaceno en itemState
       
     
     return (
         <>
             <ItemCount stock = {stock} minimum = {min}/>
-            {itemsArray.map(itemL => (<ItemList itemL={itemL} key={itemL.id} 
-            getItems = {getItems ()
-                        .then((result) => setItemState(result))
-                        .catch((error) => console.log(error))}/>))}
+            {itemState.map(itemL => (<ItemList itemL={itemL} key={itemL.id}/>))}
         </>
     );
 

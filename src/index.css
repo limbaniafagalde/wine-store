@@ -105,3 +105,29 @@ div.counter {
   padding-bottom: 5px;
 }
 
+.productImg{
+  width: 300px;
+  height: 380px;
+  margin-top:20px;
+}
+ 
+.productDetInfo{
+  float: right;
+  padding-top:200px;
+}
+.productDetImage{
+  float: left;
+
+}
+
+
+.singleProduct{
+  width: 800px;
+  height:450px;
+  display: inline-block;
+}
+
+.productDetDet{
+  width:400px;
+  margin-bottom: 10px;
+}

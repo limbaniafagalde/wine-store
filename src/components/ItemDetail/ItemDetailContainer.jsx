@@ -1,13 +1,10 @@
-import React, {useState} from "react";
-import ItemCount from "./ItemCount/ItemCount";
-import ItemList from "./ItemList"
+import React, {useState, useEffect} from "react";
+import ItemDetail from "./ItemDetail"
 
-const ItemListContainer = () => {
-    const stock = 4; //lo tengo que pasar por props al min y max
-    const min = 1;
-    
+const ItemDetailContainer = () => {
+
     //state of items
-    const[itemState, setItemState] = useState([]);
+    const[itemDetail, setItemDetail] = useState([]);
 
     //array of items
     const itemsArray = [
@@ -41,23 +38,26 @@ const ItemListContainer = () => {
 
     ]
 
-    const getItems = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => resolve(itemsArray), 2000);
-        });
-      };
 
-      getItems()
-      .then((resolve) => setItemState(resolve)) //recibo la data en resolve y lo almaceno en itemState
-      
     
-    return (
+        const getItem = () => {
+            return new Promise((resolve, reject) => {
+              setTimeout(() => resolve(itemsArray.find((item) => item.id === 1)), 2000);
+            });
+          };
+    
+          useEffect (()=> {
+            getItem().then((result) => setItemDetail(result)); //recibo la data en resolve y lo almaceno en itemState
+            
+            } , []); 
+
+    
+            return (
         <>
-            <ItemCount stock = {stock} minimum = {min}/>
-            {itemState.map(itemL => (<ItemList itemL={itemL} key={itemL.id}/>))}
+            <ItemDetail itemD = {itemDetail}/>
         </>
     );
 
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

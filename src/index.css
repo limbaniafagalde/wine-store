@@ -70,6 +70,10 @@ header{
   padding: 8px 25px;
 }
 
+/*****************/
+/****counter*****/
+/***************/
+
 div.counter {
   background-color: rgb(236, 236, 236);
   width: 25px;
@@ -80,6 +84,11 @@ div.counter {
   border-radius: 100%;
   margin:0 10px;
 }
+
+
+/*******************/
+/*list of products*/
+/*****************/
 
 .quantity {
   display:flex;
@@ -99,27 +108,30 @@ div.counter {
 }
 
 .productImage{
-  width: 155px;
+  width: 200px;
   height: 200px;
   border-bottom:1px solid rgb(240, 141, 141);
   padding-bottom: 5px;
 }
 
+/*****************/
+/*single product*/
+/***************/
 .productImg{
   width: 300px;
-  height: 380px;
+  height: 300px;
   margin-top:20px;
 }
  
 .productDetInfo{
   float: right;
-  padding-top:200px;
+  padding-top:30px;
 }
+
 .productDetImage{
   float: left;
 
 }
-
 
 .singleProduct{
   width: 800px;
@@ -130,4 +142,24 @@ div.counter {
 .productDetDet{
   width:400px;
   margin-bottom: 10px;
+}
+
+.productTitle{
+  margin-bottom: 10px;
+}
+
+.productPrice{
+  font-weight: 500;
+}
+
+.btnAddCart{
+  margin:15px 0;
+  padding:5px;
+  background-color:lightcoral;
+  border:none;
+  width:150px;
+  height:50px;
+  font-weight: 700;
+  cursor: pointer;
+  
 }

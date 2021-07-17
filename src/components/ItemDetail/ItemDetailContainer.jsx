@@ -1,58 +1,38 @@
 import React, {useState, useEffect} from "react";
-import ItemDetail from "./ItemDetail"
+import ItemDetail from "./ItemDetail";
+import {useParams} from "react-router-dom";
+import {products} from "../../data/products.json";
 
 const ItemDetailContainer = () => {
 
     //state of items
     const[itemDetail, setItemDetail] = useState([]);
 
-    //array of items
-    const itemsArray = [
-        {
-            id: 1,
-            title: "The President's Blend",
-            img: "./img/president.webp",
-            category: 1, /*2018*/ 
-            price: 30,
-            stock: 10,
-            detail:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?",
-        },
-        {
-            id: 2,
-            title: "Primus",
-            img:"./img/primus.webp",
-            category: 1,
-            price: 40,
-            stock: 20,
-            detail:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?",
-        },
-        {
-            id: 3,
-            title:"Amalaya",
-            img:"./img/amalaya.webp",
-            category:2, /*2019*/
-            price:20,
-            stock:10,
-            detail:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?",
-        },
+    //id, los : cambian el nombre del parametro
+    const { id } = useParams();
 
-    ]
-
-
+   
     
         const getItem = () => {
-            return new Promise((resolve, reject) => {
-              setTimeout(() => resolve(itemsArray.find((item) => item.id === 1)), 2000);
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                  //va a resolver solo el item cuyo id coincida con el de la url
+                  let productId = products.find((item) => item.id.toString() === id);
+                  resolve(productId);
+                  
+            }, 1000);
             });
           };
     
           useEffect (()=> {
+            setItemDetail([]);
             getItem().then((result) => setItemDetail(result)); //recibo la data en resolve y lo almaceno en itemState
             
-            } , []); 
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            } ,  [id]); 
 
     
-            return (
+    return (
         <>
             <ItemDetail itemD = {itemDetail}/>
         </>

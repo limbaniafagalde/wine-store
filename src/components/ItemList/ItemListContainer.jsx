@@ -1,60 +1,43 @@
-import React, {useState} from "react";
-import ItemCount from "./ItemCount/ItemCount";
+import React, {useState, useEffect} from "react";
 import ItemList from "./ItemList"
-
+import {products} from "../../data/products.json";
+import {useParams} from "react-router-dom";
 const ItemListContainer = () => {
-    const stock = 4; //lo tengo que pasar por props al min y max
-    const min = 1;
     
     //state of items
     const[itemState, setItemState] = useState([]);
-
-    //array of items
-    const itemsArray = [
-        {
-            id: 1,
-            title: "The President's Blend",
-            img: "./img/president.webp",
-            category: 1, /*2018*/ 
-            price: 30,
-            stock: 10,
-            detail:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?",
-        },
-        {
-            id: 2,
-            title: "Primus",
-            img:"./img/primus.webp",
-            category: 1,
-            price: 40,
-            stock: 20,
-            detail:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?",
-        },
-        {
-            id: 3,
-            title:"Amalaya",
-            img:"./img/amalaya.webp",
-            category:2, /*2019*/
-            price:20,
-            stock:10,
-            detail:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?",
-        },
-
-    ]
-
-    const getItems = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => resolve(itemsArray), 2000);
-        });
-      };
-
-      getItems()
-      .then((resolve) => setItemState(resolve)) //recibo la data en resolve y lo almaceno en itemState
-      
     
+    const {idCat} = useParams();
+
+    useEffect(() => {
+
+        setItemState([]);
+
+        //promise
+        const getItems = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    if(idCat){
+                        let filteredList = products.filter(
+                            (item) => item.category.toString() === idCat);
+                            resolve(filteredList);
+                        }
+                    
+                    else{
+                        resolve(products);
+                        }
+                }, 2000);
+            });
+        };
+
+        getItems().then((result) => setItemState(result)); //recibo la data en result y lo almaceno en itemState
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [idCat, products]);
+        //     {itemState.map(itemL => (<ItemList itemL={itemL} key={itemL.id}/>))}
+
     return (
         <>
-            <ItemCount stock = {stock} minimum = {min}/>
-            {itemState.map(itemL => (<ItemList itemL={itemL} key={itemL.id}/>))}
+            <ItemList itemL={itemState} />
         </>
     );
 

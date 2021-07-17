@@ -32,7 +32,7 @@ header{
   padding:0 20px;
 }
 
-.logo a{
+.logo{
   color:#fff;
   text-decoration: none;
   font-size: 20px;
@@ -47,7 +47,7 @@ header{
   display: inline-block; /*alinea de forma horizontal*/
 }
 
-.menu ul li a{
+.menuLinks, .logo{
   display: inline-block;
   position: relative;
   color:#fff;
@@ -58,10 +58,6 @@ header{
   transition: .2s;
 }
 
-.menu ul li a:hover{
-  color:lightcoral;
-  background-color: #fff;
-}
 
 .cart-widget{
 /*  margin-left: auto; */
@@ -89,6 +85,11 @@ div.counter {
 /*******************/
 /*list of products*/
 /*****************/
+.listContainer{
+  display:flex;
+  justify-content:center; /*centrar el div con flexbox*/  
+  margin-top:30px;
+}
 
 .quantity {
   display:flex;
@@ -112,6 +113,11 @@ div.counter {
   height: 200px;
   border-bottom:1px solid rgb(240, 141, 141);
   padding-bottom: 5px;
+}
+
+.productLink{
+  text-decoration:none;
+  color: black;
 }
 
 /*****************/
@@ -161,5 +167,7 @@ div.counter {
   height:50px;
   font-weight: 700;
   cursor: pointer;
-  
+  color:white;
+  border: 1px solid white;
+  border-radius: 5%;
 }

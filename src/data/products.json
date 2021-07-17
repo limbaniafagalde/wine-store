@@ -1,0 +1,34 @@
+{
+    "products": [
+
+            {
+                "id": 1,
+                "title": "The President's Blend",
+                "img": "./img/president.webp",
+                "category": 2,  
+                "price": 30,
+                "stock": 10,
+                "detail":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?"
+            },
+            {
+                "id": 2,
+                "title": "Primus",
+                "img":"./img/primus.webp",
+                "category": 2,
+                "price": 40,
+                "stock": 20,
+                "detail":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?"
+            },
+            {
+                "id": 3,
+                "title":"Amalaya",
+                "img":"./img/amalaya.webp",
+                "category":3, 
+                "price":20,
+                "stock":10,
+                "detail":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nesciunt repellendus, maxime iste dolorem reiciendis itaque hic error veritatis repudiandae nam nobis ipsam ducimus debitis consectetur accusantium. Cupiditate, tempore porro?"
+            }
+    
+        
+    ]
+}

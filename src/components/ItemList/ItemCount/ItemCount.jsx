@@ -16,7 +16,7 @@ const ItemCount = (props) => {
 
        <div className="counter" onClick={counter < props.stock ? increase : null}> + </div> 
 
-       <p classNamee="counter">{counter}</p>
+       <p className="counter">{counter}</p>
 
        <div className="counter" onClick={counter > props.minimum ? decrease : null}> - </div> 
 

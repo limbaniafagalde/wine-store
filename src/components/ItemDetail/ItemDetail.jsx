@@ -2,6 +2,7 @@ import React from "react";
 import ItemCount from "../ItemList/ItemCount/ItemCount";
 
 const ItemDetail = ({itemD}) => {
+
 const stock = itemD.stock;
 const min = 1;
 
@@ -25,6 +26,7 @@ const min = 1;
                     <ItemCount stock = {stock} minimum = {min}/>
                     <button className="btnAddCart">ADD TO CART</button>
                 </div>
+                
             </div>
         </>
     );

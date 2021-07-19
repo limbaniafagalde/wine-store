@@ -4,7 +4,7 @@
             {
                 "id": 1,
                 "title": "The President's Blend",
-                "img": "./img/president.webp",
+                "img": "../img/president.webp",
                 "category": 2,  
                 "price": 30,
                 "stock": 10,
@@ -13,7 +13,7 @@
             {
                 "id": 2,
                 "title": "Primus",
-                "img":"./img/primus.webp",
+                "img":"../img/primus.webp",
                 "category": 2,
                 "price": 40,
                 "stock": 20,
@@ -22,7 +22,7 @@
             {
                 "id": 3,
                 "title":"Amalaya",
-                "img":"./img/amalaya.webp",
+                "img":"../img/amalaya.webp",
                 "category":3, 
                 "price":20,
                 "stock":10,

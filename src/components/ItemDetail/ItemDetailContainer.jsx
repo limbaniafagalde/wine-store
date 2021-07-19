@@ -9,15 +9,13 @@ const ItemDetailContainer = () => {
     const[itemDetail, setItemDetail] = useState([]);
 
     //id, los : cambian el nombre del parametro
-    const { id } = useParams();
-
+    const { idDet } = useParams();
    
-    
         const getItem = () => {
             return new Promise((resolve) => {
               setTimeout(() => {
                   //va a resolver solo el item cuyo id coincida con el de la url
-                  let productId = products.find((item) => item.id.toString() === id);
+                  let productId = products.find((item) => item.id.toString() === idDet);
                   resolve(productId);
                   
             }, 1000);
@@ -29,9 +27,9 @@ const ItemDetailContainer = () => {
             getItem().then((result) => setItemDetail(result)); //recibo la data en resolve y lo almaceno en itemState
             
             // eslint-disable-next-line react-hooks/exhaustive-deps
-            } ,  [id]); 
+            } ,  [idDet]); 
 
-    
+
     return (
         <>
             <ItemDetail itemD = {itemDetail}/>

@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
 
           <Navbar/>
-      
+
           <Switch>
 
             <Route exact path="/">
@@ -22,11 +22,11 @@ function App() {
               </div>
             </Route>
 
-            <Route path="category/:idCat">
+            <Route path="/category/:idCat">
               <ItemListContainer/>
             </Route>
 
-            <Route path="item/:id">
+            <Route path="/item/:idDet">
               <ItemDetailContainer/>
             </Route>
         

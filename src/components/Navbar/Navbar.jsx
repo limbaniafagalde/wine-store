@@ -1,7 +1,7 @@
 import React from "react"; //siempre en la line 1 de cada componente
 import Cart from "./Cart/Cart";
 import {NavLink} from "react-router-dom";
-import {categories} from "../../data/categories.json"
+import {categories} from "../../data/categories.json";
 
 const Navbar  = () => {
     return ( //un jsx siempre tiene return
@@ -15,14 +15,14 @@ const Navbar  = () => {
             <nav className="menu">
                 <ul>    
                     {categories.map((cat) =>(
-                        <NavLink to={"category/" + cat.id} key = {cat.id} className="menuLinks">
+                        <NavLink to={"/category/" + cat.id} key = {cat.id} className="menuLinks">
                             {cat.title}
                         </NavLink>))}
 
 
                     <NavLink to="/" className="menuLinks"><li>Home</li></NavLink>
-                    <NavLink to="itemListContainer" className="menuLinks"><li>Productos</li></NavLink>
-                    <NavLink to="" className="menuLinks"><li>Contacto</li></NavLink>
+                    <NavLink to= {""} className="menuLinks"><li>Products</li></NavLink>
+                    <NavLink to="" className="menuLinks"><li>Contact</li></NavLink>
                     
                 </ul>
             </nav>

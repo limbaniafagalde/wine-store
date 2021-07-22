@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ItemCount = (props) => {
+const ItemCount = ({minimum, stock, counter, setCounter}) => {
 
-  const [counter, setCounter] = useState(1);
-  
-  const increase = () => {
-    setCounter(counter + 1);
-  } 
-  const decrease = () => {
-    setCounter(counter - 1);
-  } 
+const increase = () => {
+  setCounter(counter + 1);
+} 
+const decrease = () => {
+  setCounter(counter - 1);
+} 
 
   return (
     <div className="quantity">
 
-       <div className="counter" onClick={counter < props.stock ? increase : null}> + </div> 
+       <div className="counter" onClick={counter < stock ? increase : null}> + </div> 
 
        <p className="counter">{counter}</p>
 
-       <div className="counter" onClick={counter > props.minimum ? decrease : null}> - </div> 
+       <div className="counter" onClick={counter > minimum ? decrease : null}> - </div> 
 
     </div>
   );

@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemList/ItemCount/ItemCount";
 
 const ItemDetail = ({itemD}) => {
 
 const stock = itemD.stock;
 const min = 1;
+
+const [counter, setCounter] = useState(1);
+const [shop, setShop] = useState(false);
+
+const handleShop = () => setShop(!shop); //cambiará el estado dependiendo del valor que tenga cuando haga click
+  
 
     return (
         <>
@@ -23,8 +30,22 @@ const min = 1;
                     <p className="productPrice">
                         <span>{itemD.price}</span> EUR
                     </p>
-                    <ItemCount stock = {stock} minimum = {min}/>
-                    <button className="btnAddCart">ADD TO CART</button>
+                    {!shop ? (
+                        <>
+                            <ItemCount stock = {stock} minimum = {min}  counter = {counter} setCounter = {setCounter}/>
+                            <button className="btnAddCart" onClick= {handleShop}>Shop</button>
+                        </>
+                    ) : (
+                        <>
+                        <Link to="/cart" onClick = {handleShop}>
+                            <button className="btnAddCart" onClick= {handleShop}>Let's Pay</button>
+                        </Link>
+                        <button className="btnAddCart" onClick={handleShop}>Edit</button>
+                        </>
+                    )
+                        
+                    }
+                    
                 </div>
                 
             </div>

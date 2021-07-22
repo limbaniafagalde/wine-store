@@ -32,12 +32,6 @@ header{
   padding:0 20px;
 }
 
-.logo{
-  color:#fff;
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 60px;
-}
 
 .menu{
   margin-left: auto; /*se ponen a la derecha los links*/
@@ -56,8 +50,16 @@ header{
   padding:0 8px;
   text-transform: uppercase;
   transition: .2s;
+  font-weight: 500;
 }
 
+.logo{
+  color:#fff;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 60px;
+  font-weight: 700;
+}
 
 .cart-widget{
 /*  margin-left: auto; */
@@ -170,4 +172,5 @@ div.counter {
   color:white;
   border: 1px solid white;
   border-radius: 5%;
+  text-transform: uppercase;
 }

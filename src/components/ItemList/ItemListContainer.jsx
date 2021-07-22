@@ -33,8 +33,7 @@ const ItemListContainer = () => {
         getItems().then((result) => setItemState(result)); //recibo la data en result y lo almaceno en itemState
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [idCat, products]);
-        //     {itemState.map(itemL => (<ItemList itemL={itemL} key={itemL.id}/>))}
-
+        
     return (
         <>
             <ItemList itemL={itemState} />

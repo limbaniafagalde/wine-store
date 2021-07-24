@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemList/ItemCount/ItemCount";
+import {CartContext} from "../CartContext/CartContext";
+
 
 const ItemDetail = ({itemD}) => {
 
@@ -12,6 +14,24 @@ const [shop, setShop] = useState(false);
 
 const handleShop = () => setShop(!shop); //cambiará el estado dependiendo del valor que tenga cuando haga click
   
+const {addToCart, cart}  = useContext(CartContext);
+
+const {id, title, price} = itemD;
+
+console.log(cart)
+
+
+
+const handleAdd = () =>{
+    handleShop()
+    addToCart({
+        id, 
+        title,
+        price,
+        counter
+    })
+}
+
 
     return (
         <>
@@ -38,7 +58,7 @@ const handleShop = () => setShop(!shop); //cambiará el estado dependiendo del v
                     ) : (
                         <>
                         <Link to="/cart" onClick = {handleShop}>
-                            <button className="btnAddCart" onClick= {handleShop}>Let's Pay</button>
+                            <button className="btnAddCart" onClick= {handleAdd}>Let's Pay</button>
                         </Link>
                         <button className="btnAddCart" onClick={handleShop}>Edit</button>
                         </>

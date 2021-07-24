@@ -62,9 +62,20 @@ header{
 }
 
 .cart-widget{
-/*  margin-left: auto; */
-  line-height: 60px;
+  margin-left: auto; 
+  /*line-height: 60px;*/
   cursor:pointer;
+  /*padding: 8px 25px;*/
+  color:white;
+}
+
+.cart-Q, .cart-P{
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.cart-P{
   padding: 8px 25px;
 }
 

@@ -16,7 +16,7 @@ const handleShop = () => setShop(!shop); //cambiará el estado dependiendo del v
   
 const {addToCart, cart}  = useContext(CartContext);
 
-const {id, title, price} = itemD;
+const {id, title, price, img} = itemD;
 
 console.log(cart)
 
@@ -28,6 +28,7 @@ const handleAdd = () =>{
         id, 
         title,
         price,
+        img,
         counter
     })
 }
@@ -58,7 +59,7 @@ const handleAdd = () =>{
                     ) : (
                         <>
                         <Link to="/cart" onClick = {handleShop}>
-                            <button className="btnAddCart" onClick= {handleAdd}>Let's Pay</button>
+                            <button className="btnAddCart" onClick= {handleAdd}>Add to Cart</button>
                         </Link>
                         <button className="btnAddCart" onClick={handleShop}>Edit</button>
                         </>

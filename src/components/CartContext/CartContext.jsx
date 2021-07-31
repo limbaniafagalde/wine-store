@@ -1,8 +1,9 @@
 import React, {useState, createContext} from "react";
 
-
+//declaración del contexto 
 export const CartContext = createContext();
 
+//le paso a los hijos los valores que yo necesite
 export const CartProvider = ({children}) => {
     
     const [cart, setCart] = useState([]);
@@ -12,6 +13,7 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (item) => {
             if (isInCart(item)) {
+                //destructuring
                 setCart([...cart, item]);
             }
             else{
@@ -23,7 +25,7 @@ export const CartProvider = ({children}) => {
 
 
     const deleteProduct = (id) =>{
-        setCart(cart.filter(prod => prod.id !== id));
+        setCart(cart.filter(prod => prod.id != id));
     }
 
     const totalPrice = () =>{

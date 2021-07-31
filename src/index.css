@@ -185,3 +185,86 @@ div.counter {
   border-radius: 5%;
   text-transform: uppercase;
 }
+
+
+/******************/
+/**cart products**/
+/****************/
+
+
+.productViewCart{
+  width: 470px;
+  height:110px;
+  border: 1px solid rgb(240, 141, 141);
+  border-radius: 1%;
+  margin:20px 50px;
+  padding:10px;
+}
+
+.cartTitle{
+  font-weight: 500;
+  margin:20px 50px;
+  text-align: center;
+}
+
+.cartTotal{
+  text-align: left;
+  width: 200px;
+  font-weight: 500;
+  float:right;
+  margin-top:20px;
+}
+
+.productImageCart{
+  float:left;
+  width: 70px;
+  height: 70px;
+}
+
+.productTitleCart{
+  float:left;
+  line-height: 50px; 
+}
+
+.productPriceCart{
+  display: inline-block;
+  float: right;
+}
+
+.productPriceCart p{
+  float: right;
+  margin: 5px;
+  line-height: 100px; 
+}
+
+button.deleteFromCart{
+  float: right;
+  background-color:lightcoral;
+  border:none;
+  width:18px;
+  height:18px;
+  font-weight: 700;
+  cursor: pointer;
+  color:white;
+  border: 1px solid white;
+  border-radius: 5%;
+}
+
+.checkOut{
+  margin:10px 0;
+  padding:5px;
+  background-color:lightcoral;
+  border:none;
+  width:100px;
+  height:50px;
+  font-weight: 700;
+  cursor: pointer;
+  color:white;
+  border: 1px solid white;
+  border-radius: 5%;
+  text-transform: uppercase; 
+}
+
+.cartContainer{
+  display: inline-block;
+}

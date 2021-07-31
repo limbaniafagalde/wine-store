@@ -12,11 +12,11 @@ const decrease = () => {
   return (
     <div className="quantity">
 
-       <div className="counter" onClick={counter < stock ? increase : null}> + </div> 
+       <div className="counter" onClick={counter < stock && increase}> + </div> 
 
        <p className="counter">{counter}</p>
 
-       <div className="counter" onClick={counter > minimum ? decrease : null}> - </div> 
+       <div className="counter" onClick={counter > minimum && decrease}> - </div> 
 
     </div>
   );

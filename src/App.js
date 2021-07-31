@@ -3,12 +3,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
-import {CartContext, CartProvider} from "./components/CartContext/CartContext";
+import {CartProvider} from "./components/CartContext/CartContext";
+import Cart from "./components/Navbar/Cart/Cart";
 
 function App() {
-  
+  //CartProvider es el componente (context) con la lógica, mediante la prop children todo los hijos <> estan contemplados
   return (
-    <CartProvider>
+    <CartProvider> 
 
       <>  
         <div className="App">
@@ -32,6 +33,10 @@ function App() {
                 <ItemDetailContainer/>
               </Route>
           
+              <Route path="/cart">
+                <Cart/>
+              </Route>
+
             </Switch>
         
           </BrowserRouter>

@@ -1,38 +1,37 @@
 import React, {useState, useEffect} from "react";
 import ItemDetail from "./ItemDetail";
 import {useParams} from "react-router-dom";
-import {products} from "../../data/products.json";
+//import {products} from "../../data/products.json";
+import {database} from "../../firebase/firebase";
 
 const ItemDetailContainer = () => {
 
-    //state of items
-    const[itemDetail, setItemDetail] = useState([]);
+    const [product, setProduct] = useState([]); 
 
     //id, los : cambian el nombre del parametro
     const { idDet } = useParams();
-   
-        const getItem = () => {
-            return new Promise((resolve) => {
-              setTimeout(() => {
-                  //va a resolver solo el item cuyo id coincida con el de la url
-                  let productId = products.find((item) => item.id.toString() === idDet);
-                  resolve(productId);
-                  
-            }, 1000);
-            });
-          };
+
+    const getProduct = (idProd) => {
     
+        database.collection("products").doc(idProd).get()
+        .then((query) => {
+            setProduct(query.data()); //devuelve un array
+
+        })
+        
+    };
+
+
           useEffect (()=> {
-            setItemDetail([]);
-            getItem().then((result) => setItemDetail(result)); //recibo la data en resolve y lo almaceno en itemState
+            getProduct(idDet); //recibo la data en resolve y lo almaceno en itemState
             
             // eslint-disable-next-line react-hooks/exhaustive-deps
             } ,  [idDet]); 
-
-
+        
+      
     return (
         <>
-            <ItemDetail itemD = {itemDetail}/>
+            <ItemDetail itemD = {product}/>
         </>
     );
 

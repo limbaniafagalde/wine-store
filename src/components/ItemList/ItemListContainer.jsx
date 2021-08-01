@@ -1,42 +1,50 @@
 import React, {useState, useEffect} from "react";
 import ItemList from "./ItemList"
-import {products} from "../../data/products.json";
 import {useParams} from "react-router-dom";
+import {database} from "../../firebase/firebase";
+
 const ItemListContainer = () => {
-    
-    //state of items
-    const[itemState, setItemState] = useState([]);
-    
+
+    const [products, setProducts] = useState([]); //[] si es + de 1
+
     const {idCat} = useParams();
+
+    const getProducts = (idCategory) => {
+        
+        if(idCategory){
+           
+            const prodCat = database.collection("products").where("category", "==", idCategory);
+            prodCat.get().then((query) => 
+            setProducts(query.docs.map(doc => {
+            return {...doc.data(), id: doc.id}; //devuelve un array
+            }))
+          );     
+        }
+        else{
+            const prods = database.collection("products");
+
+            prods.get().then((query) => 
+            setProducts(query.docs.map(doc => {
+            return {...doc.data(), id: doc.id}; //devuelve un array
+            }))
+          );      
+        }
+        
+     
+    };
 
     useEffect(() => {
 
-        setItemState([]);
+        getProducts(idCat);
 
-        //promise
-        const getItems = () => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    if(idCat){
-                        let filteredList = products.filter(
-                            (item) => item.category.toString() === idCat);
-                            resolve(filteredList);
-                        }
-                    
-                    else{
-                        resolve(products);
-                        }
-                }, 2000);
-            });
-        };
-
-        getItems().then((result) => setItemState(result)); //recibo la data en result y lo almaceno en itemState
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [idCat, products]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [idCat, products]); 
         
+    console.log(products);
+
     return (
         <>
-            <ItemList itemL={itemState} />
+            <ItemList itemL={products} />
         </>
     );
 

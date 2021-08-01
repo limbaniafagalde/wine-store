@@ -5,16 +5,16 @@ import { CartContext } from "../../CartContext/CartContext";
 const CartWidget = () => {
 
     //llamamiento de un contexto
-    const {totalPrice, totalQuantity} = useContext(CartContext)
+    const {cart, totalPrice, totalQuantity} = useContext(CartContext)
     
     return (
         <>
         <div className="cart-Q">
             <img src={cartImg} alt="ShoppingCart" />
-            <p>{totalQuantity()}</p>
+            <p>{cart.length !== 0 && totalQuantity()}</p>
         </div>
 
-            <p className="cart-P">{totalPrice()} EUR</p>
+            <p className="cart-P">{cart.length !== 0 && totalPrice() + " EUR"} </p>
         </>
     ) 
 

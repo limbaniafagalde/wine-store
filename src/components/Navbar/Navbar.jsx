@@ -1,9 +1,27 @@
-import React from "react"; //siempre en la line 1 de cada componente
+import React, {useState} from "react"; //siempre en la line 1 de cada componente
 import CartWidget from "./Cart/CartWidget";
 import {NavLink} from "react-router-dom";
-import {categories} from "../../data/categories.json";
+//import {categories} from "../../data/categories.json";
+import {database} from "../../firebase/firebase";
+
 
 const Navbar  = () => {
+
+    const [categories, setCategories] = useState([]);
+
+    const getCategories = () => {
+    
+        const cats = database.collection("categories");
+
+        cats.get().then((query) => 
+        setCategories(query.docs.map(doc => {
+        return {...doc.data(), id: doc.id}; //devuelve un array
+        }))
+     );
+    };
+
+    getCategories();
+
     return ( //un jsx siempre tiene return
         <header>   
             <NavLink to="/" className="logo">

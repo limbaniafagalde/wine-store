@@ -22,16 +22,16 @@ const ItemListContainer = () => {
         }
         else{
             const prods = database.collection("products");
-
+        
             prods.get().then((query) => 
             setProducts(query.docs.map(doc => {
             return {...doc.data(), id: doc.id}; //devuelve un array
             }))
-          );      
-        }
+          );   
+        }     
+    }
         
      
-    };
 
     useEffect(() => {
 

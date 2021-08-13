@@ -4,19 +4,18 @@ import ItemCount from "../ItemList/ItemCount/ItemCount";
 import {CartContext} from "../CartContext/CartContext";
 
 
-const ItemDetail = ({itemD}) => {
+const ItemDetail = ({itemD, id}) => {
 
-const stock = itemD.stock;
 const min = 1;
 
-const [counter, setCounter] = useState(1);
+const [quantity, setQuantity] = useState(1);
 const [shop, setShop] = useState(false);
 
 const handleShop = () => setShop(!shop); //cambiará el estado dependiendo del valor que tenga cuando haga click
   
 const {addToCart, cart}  = useContext(CartContext);
 
-const {id, title, price, img} = itemD;
+const {title, price, img, stock} = itemD;
 
 console.log(cart)
 
@@ -26,10 +25,11 @@ const handleAdd = () =>{
     handleShop()
     addToCart({
         id, 
-        title,
-        price,
         img,
-        counter
+        price,
+        quantity, 
+        stock,
+        title
     })
 }
 
@@ -53,7 +53,7 @@ const handleAdd = () =>{
                     </p>
                     {!shop ? (
                         <>
-                            <ItemCount stock = {stock} minimum = {min}  counter = {counter} setCounter = {setCounter}/>
+                            <ItemCount stock = {stock} minimum = {min}  quantity = {quantity} setQuantity = {setQuantity}/>
                             <button className="btnAddCart" onClick= {handleShop}>Shop</button>
                         </>
                     ) : (

@@ -1,22 +1,22 @@
 import React from 'react';
 
-const ItemCount = ({minimum, stock, counter, setCounter}) => {
+const ItemCount = ({minimum, stock, quantity, setQuantity}) => {
 
 const increase = () => {
-  setCounter(counter + 1);
+  setQuantity(quantity + 1);
 } 
 const decrease = () => {
-  setCounter(counter - 1);
+  setQuantity(quantity - 1);
 } 
 
   return (
     <div className="quantity">
 
-       <div className="counter" onClick={counter < stock && increase}> + </div> 
+       <div className="counter" onClick={quantity < stock && increase}> + </div> 
 
-       <p className="counter">{counter}</p>
+       <p className="counter">{quantity}</p>
 
-       <div className="counter" onClick={counter > minimum && decrease}> - </div> 
+       <div className="counter" onClick={quantity > minimum && decrease}> - </div> 
 
     </div>
   );

@@ -208,11 +208,11 @@ div.counter {
 }
 
 .cartTotal{
-  text-align: left;
+  text-align: right;
   width: 200px;
   font-weight: 500;
   float:right;
-  margin-top:20px;
+  margin:20px 50px;
 }
 
 .productImageCart{
@@ -263,8 +263,32 @@ button.deleteFromCart{
   border: 1px solid white;
   border-radius: 5%;
   text-transform: uppercase; 
+  display:none;
 }
 
 .cartContainer{
   display: inline-block;
+}
+
+.formButton{
+  background-color:lightcoral;
+  border:none;
+  width:70px;
+  height:50px;
+  font-weight: 700;
+  cursor: pointer;
+  color:white;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-top: 10px;
+  float:right;
+}
+
+.checkForm input{
+  margin-bottom:5px;
+}
+
+.checkForm h2{
+  font-weight: 500;
+  margin:15px 0;
 }

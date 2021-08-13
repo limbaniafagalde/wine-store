@@ -1,4 +1,4 @@
-import React, {useState} from "react"; //siempre en la line 1 de cada componente
+import React, {useState, useEffect} from "react"; //siempre en la line 1 de cada componente
 import CartWidget from "./Cart/CartWidget";
 import {NavLink} from "react-router-dom";
 //import {categories} from "../../data/categories.json";
@@ -20,7 +20,12 @@ const Navbar  = () => {
      );
     };
 
-    getCategories();
+    useEffect(() => {
+
+        getCategories();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); 
 
     return ( //un jsx siempre tiene return
         <header>   

@@ -221,6 +221,7 @@ div.counter {
   border: 1px solid white;
   border-radius: 5%;
   margin-top: 10px;
+  margin-bottom:25px;
   text-transform: uppercase;
 }
 
@@ -251,7 +252,7 @@ div.counter {
 }
 
 .productPriceCart{
-  display: inline-block;
+ /* display: inline-block;*/
   float: right;
 }
 
@@ -272,22 +273,6 @@ button.deleteFromCart{
   color:white;
   border: 1px solid white;
   border-radius: 5%;
-}
-
-.checkOut{
-  margin:10px 0;
-  padding:5px;
-  background-color:lightcoral;
-  border:none;
-  width:100px;
-  height:50px;
-  font-weight: 700;
-  cursor: pointer;
-  color:white;
-  border: 1px solid white;
-  border-radius: 5%;
-  text-transform: uppercase; 
-  display:none;
 }
 
 .cartContainer{

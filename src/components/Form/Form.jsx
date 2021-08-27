@@ -2,8 +2,8 @@ import React from "react";
 import firebase from "firebase/app";
 import {database} from "../../firebase/firebase";
 
-
 const Form  = ({ cart, totalPrice, clearCart }) => {
+
 
     const handleSubmit = (event) =>{
         
@@ -63,7 +63,7 @@ const Form  = ({ cart, totalPrice, clearCart }) => {
               outOfStockItems.push({ ...doc.data(), id: doc.id });
             }
           });
-    
+          
           if (outOfStockItems.length === 0) {
             
             batch.commit().then(() => {
@@ -71,6 +71,7 @@ const Form  = ({ cart, totalPrice, clearCart }) => {
               alert("Thank you for your order! \n ID: " + orderId);
               clearCart();
             });
+
           } else {
             alert("ERROR: There are some items out of stock.");
           }
@@ -79,6 +80,7 @@ const Form  = ({ cart, totalPrice, clearCart }) => {
     }
 
     return ( 
+      <>
         <form onSubmit={handleSubmit} className = "checkForm">
             <h2>Contact Info</h2>
             <input type="text" placeholder="Name" id="name" />
@@ -87,6 +89,7 @@ const Form  = ({ cart, totalPrice, clearCart }) => {
             <input type="email" placeholder="Email" id="email" />
             <button type="submit" className="formButton">BUY</button>
         </form>
+      </>
     );
 }
 

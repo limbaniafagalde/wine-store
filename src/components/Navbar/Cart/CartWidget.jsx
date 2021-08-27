@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import cartImg from "../../../assets/shopping-cart.png";
+import cartImg from "../../../assets/cart.png";
 import { CartContext } from "../../CartContext/CartContext";
 
 const CartWidget = () => {

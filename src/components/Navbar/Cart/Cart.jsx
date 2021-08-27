@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import { CartContext } from "../../CartContext/CartContext";
-import Form from "../../Form/Form";
+import {Link} from "react-router-dom";
 
 const Cart = () => {
-    const {cart, totalPrice, deleteProduct, totalQuantity, clearCart}  = useContext(CartContext);
+    const {cart, deleteProduct}  = useContext(CartContext);
 
     const handleRemove = (id) => deleteProduct(id);
 
@@ -46,17 +46,13 @@ const Cart = () => {
                                 <p>
                                     {c.price} EUR                            
                                 </p>
-                
                         </div>
                     </div>
                     ))}
+                    <Link to = {"/Checkout"}>
+                        <button className="nextToCheck">Next</button>
+                    </Link>
                 </div>       
-                <div className="cartTotal">
-                    <p>Total: {totalPrice()} EUR</p>
-                    <p>Items: {totalQuantity()}</p>
-                    <button className="checkOut">Check Out</button>
-                    <Form cart={cart} totalPrice={totalPrice} clearCart={clearCart}/>
-                </div>
             </>
             )} 
         </>

@@ -99,9 +99,18 @@ div.counter {
 /*list of products*/
 /*****************/
 .listContainer{
-  display:flex;
+  /*display:flex;
   justify-content:center; /*centrar el div con flexbox*/  
   margin-top:30px;
+}
+
+.prodTitle, .contactTitle{
+  margin:20px;
+  background-color:lightcoral;
+  color:white;
+  border: 1px solid rgb(240, 141, 141);  
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .quantity {
@@ -114,7 +123,7 @@ div.counter {
   width: 270px;
   height:270px;
   display:inline-block;
-  float: left;
+  /*float: left;*/
   border: 1px solid rgb(240, 141, 141);
   border-radius: 1%;
   margin:15px;
@@ -201,6 +210,20 @@ div.counter {
   padding:10px;
 }
 
+.nextToCheck{
+  background-color:lightcoral;
+  border:none;
+  width:70px;
+  height:50px;
+  font-weight: 700;
+  cursor: pointer;
+  color:white;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
 .cartTitle{
   font-weight: 500;
   margin:20px 50px;
@@ -211,7 +234,8 @@ div.counter {
   text-align: right;
   width: 200px;
   font-weight: 500;
-  float:right;
+  display:inline-block;
+  justify-content:center; 
   margin:20px 50px;
 }
 
@@ -291,4 +315,57 @@ button.deleteFromCart{
 .checkForm h2{
   font-weight: 500;
   margin:15px 0;
+}
+
+
+
+/*****Banner******/
+
+.portada img{
+  width:1300px;
+  height:715px;
+}
+
+/*****************/
+/*****Footer*****/
+/***************/
+
+.emailContact{
+  text-decoration: none;
+  color:lightcoral;
+  font-weight: 600;
+}
+
+.footer{
+  background-color: lightcoral;
+  color:white;
+  text-decoration: none;
+  display: flex;
+  padding:15px;
+  justify-content: center;
+}
+
+.footerEmail{
+  text-decoration: none;
+  color:white;
+  font-weight: 600;
+}
+
+.contactContainer, .socialMediaContainer{
+  margin: 50px;
+}
+
+ul.footerList, ul.contactList{
+  list-style-type: none;
+}
+
+ul.footerList li, ul.contactList li{
+  margin-top:8px;
+
+}
+
+.sMIcon{
+  width:50px;
+  height: 50px;
+  margin:8px;
 }

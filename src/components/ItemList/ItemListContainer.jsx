@@ -44,6 +44,7 @@ const ItemListContainer = () => {
 
     return (
         <>
+            <h1 className="prodTitle">PRODUCTS</h1>
             <ItemList itemL={products} />
         </>
     );

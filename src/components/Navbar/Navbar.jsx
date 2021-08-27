@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react"; //siempre en la line 1 de cada componente
 import CartWidget from "./Cart/CartWidget";
 import {NavLink} from "react-router-dom";
-//import {categories} from "../../data/categories.json";
 import {database} from "../../firebase/firebase";
 
 

@@ -19,5 +19,5 @@ W-Arda is a website that sells Argentine wines in Europe.
 
 ## View Online
 
-[W-arda Web]: https://sleepy-ritchie-4d6803.netlify.app/
+https://sleepy-ritchie-4d6803.netlify.app/
 
